@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - GET Method</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-box {
+            width: 350px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            color: #fff;
+        }
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .input-field {
+            margin-bottom: 15px;
+        }
+        .input-field label {
+            font-size: 14px;
+        }
+        .input-field input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            background: #fff;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h2>GET Login Portal</h2>
+
+        <form action="get_login_result.html" method="GET">
+            <div class="input-field">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter Username">
+            </div>
+
+            <div class="input-field">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter Password">
+            </div>
+
+            <button type="submit">Login (GET)</button>
+        </form>
+    </div>
+
+</body>
+</html>

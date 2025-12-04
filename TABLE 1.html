@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    table {
+        width: 500px;
+        border-collapse: collapse;
+        background: #222; 
+        color: white;
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
+    }
+    th, td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #555;
+    }
+    th {
+        background: #333;
+        font-size: 18px;
+    }
+    /* Blue rows */
+    tr:nth-child(even) {
+        background: #03A9F4;   /* Light blue */
+        color: black;
+        font-weight: bold;
+    }
+    tr:nth-child(odd):not(:first-child) {
+        background: #000;
+        color: white;
+    }
+</style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Roll-No</th>
+        <th>Name</th>
+        <th>Address</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Bhavana</td>
+        <td>Nashik</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Amit</td>
+        <td>Pune</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Neha</td>
+        <td>Mumbai</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Sameer</td>
+        <td>Chandwad</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Varun</td>
+        <td>Bhopal</td>
+    </tr>
+</table>
+</body>
+</html>

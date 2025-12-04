@@ -1,0 +1,13 @@
+<div id="moveBox" 
+     style="width:150px;height:50px;background:lightgreen;">
+    Move Mouse Here
+</div>
+<script>
+let moved = false;
+document.getElementById("moveBox").onmousemove = function () {
+    if (!moved) {
+        alert("✔ Mouse Move triggered");
+        moved = true;   // prevents repeated warnings
+    }
+};
+</script>

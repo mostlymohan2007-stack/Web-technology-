@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Info Card</title>
+<style>
+#card {
+    width: 300px;
+    padding: 15px;
+    border: 2px solid black;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    transition: 0.3s;
+}
+</style>
+</head>
+<body>
+<h2>Student Information</h2>
+<label>Name: </label>
+<input type="text" id="name"><br><br>
+<label>Department: </label>
+<input type="text" id="dept"><br><br>
+<button id="btn">Show Details</button>
+<div id="card" style="display:none;">
+    <h3 id="cname"></h3>
+    <p id="cdept"></p>
+    <p id="winsize"></p>
+</div>
+<script>
+function addEvent(element, event, handler) {
+    if (element.addEventListener) {
+        element.addEventListener(event, handler);
+    } else if (element.attachEvent) {
+        element.attachEvent("on" + event, handler);
+    }
+}
+addEvent(document.getElementById("btn"), "click", function () {
+    let name = document.getElementById("name").value;
+    let dept = document.getElementById("dept").value;
+
+    document.getElementById("cname").textContent = "Name: " + name;
+    document.getElementById("cdept").textContent = "Department: " + dept;
+
+    let w = window.innerWidth;
+    let h = window.innerHeight;
+
+    document.getElementById("winsize").textContent =
+        "Window Size: " + w + " x " + h;
+
+    document.getElementById("card").style.display = "block";
+});
+// Hover events
+let card = document.getElementById("card");
+addEvent(card, "mouseover", function () {
+    card.style.backgroundColor = "#d1e7ff";
+    card.style.borderColor = "blue";
+});
+addEvent(card, "mouseout", function () {
+    card.style.backgroundColor = "#f9f9f9";
+    card.style.borderColor = "black";
+});
+</script>
+</body>
+</html>
