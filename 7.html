@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unique Float Positioning — Aligned</title>
+  <style>
+    :root{
+      --bg: #e8ecf0;
+      --accent1: #1e90ff;
+      --accent2: #ff5733;
+      --accent3: #6a5acd;
+      --text: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #e8ecf0 0%, #f6f8fa 100%);
+      color: #222;
+    }
+    .container { max-width: 980px; margin: 0 auto; }
+    .heading { text-align: center; margin: 6px 0 12px; font-size: 30px; }
+    .lead { text-align: center; margin: 0 0 18px; color: #444; }
+    /* Row uses flex — easier alignment and overlap control */
+    .row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0; /* overlap handled by negative margins on siblings */
+      padding: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(15,23,42,0.08);
+      position: relative;
+    }
+    /* Base card */
+    .float-box {
+      width: 300px;
+      height: 160px;
+      border-radius: 14px;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 18px;
+      box-shadow: 0 8px 18px rgba(12,20,40,0.12);
+      position: relative;
+      transition: transform .22s cubic-bezier(.2,.9,.2,1), box-shadow .22s, z-index .001s;
+      user-select: none;
+      cursor: default;
+      margin: 0; /* reset */
+    }
+    /* overlap: each sibling after the first pulls left */
+    .float-box + .float-box { margin-left: -100px; }
+    .float-content { text-align: center; margin-bottom: 12px; pointer-events: none; }
+    .float-cta {
+      background: rgba(255,255,255,0.12);
+      color: var(--text);
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background .15s, transform .12s;
+    }
+    .float-cta:hover, .float-cta:focus { background: rgba(255,255,255,0.22); transform: translateY(-2px); outline: none; }
+    /* Individual card styles + stacking order */
+    .left-box   { background: linear-gradient(135deg, var(--accent1), #4fb0ff 80%); z-index: 3; transform: rotate(-3deg); }
+    .center-box { background: linear-gradient(135deg, var(--accent3), #8a7cff 80%); z-index: 2; transform: rotate(2.5deg); opacity: 0.98; }
+    .right-box  { background: linear-gradient(135deg, var(--accent2), #ff7f4d 80%); z-index: 1; transform: rotate(-1deg); opacity: 0.95; }
+    /* small ID badge */
+    .float-box::before {
+      content: attr(data-id);
+      position: absolute;
+      top: -12px;
+      left: 14px;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.95);
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+    /* hover/focus: lift above others and straighten */
+    .float-box:hover,
+    .float-box:focus-within {
+      transform: translateY(-14px) scale(1.04) rotate(0deg);
+      box-shadow: 0 20px 48px rgba(10,18,30,0.22);
+      z-index: 99 !important;
+    }
+    .caption { text-align: center; margin-top: 18px; color: #333; font-size: 14px; }
+    /* Responsive: stack vertically on small screens */
+    @media (max-width: 820px) {
+      .row { flex-direction: column; align-items: center; padding: 20px; }
+      .float-box { width: calc(100% - 40px); transform: none !important; }
+      .float-box + .float-box { margin-left: 0; margin-top: 16px; }
+      .float-box::before { left: 18px; top: -10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="heading">Floating Elements — Aligned & Overlapping</h1>
+    <p class="lead">Flex-based layout for consistent centering and overlap; hover or tab to lift a box.</p>
+    <div class="row" role="group" aria-label="Overlapping float boxes demo">
+      <div class="float-box left-box" tabindex="0" data-id="1" aria-label="Left floating card">
+        <div class="float-content">Left Float</div>
+        <button class="float-cta" aria-label="Learn more about left float">Learn more</button>
+      </div>
+
+      <div class="float-box center-box" tabindex="0" data-id="2" aria-label="Center floating card">
+        <div class="float-content">Center Float</div>
+        <button class="float-cta" aria-label="Learn more about center float">Learn more</button>
+      </div>
+
+      <div class="float-box right-box" tabindex="0" data-id="3" aria-label="Right floating card">
+        <div class="float-content">Right Float</div>
+        <button class="float-cta" aria-label="Learn more about right float">Learn more</button>
+      </div>
+    </div>
+    <p class="caption">Tip: hover, focus or tab to a box to lift it above the others.</p>
+  </div>
+</body>
+</html>

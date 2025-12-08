@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Unique Background Repeat Example</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+
+            /* Background image with repeat */
+            background-image: url("https://picsum.photos/180/180");
+            background-repeat: repeat; /* Try: no-repeat, repeat-x, repeat-y */
+            background-size: auto;
+
+            /* Soft overlay for better readability */
+            backdrop-filter: blur(2px);
+        }
+
+        .content-box {
+            width: 60%;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.65);
+            Border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: #003049;
+        }
+
+        p {
+            font-size: 18px;
+            color: #222;
+        }
+
+        /* Simple fade animation */
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content-box">
+        <h2>Background Image Repeat Demo</h2>
+        <p>
+            This webpage uses a background picture that repeats both horizontally and vertically.<br>
+            The blurred overlay makes the text easy to read while keeping the background pattern visible.
+        </p>
+    </div>
+
+</body>
+</html>

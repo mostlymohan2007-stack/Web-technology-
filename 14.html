@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Absolute Positioning – Lively Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 class="title">Lively Absolute Positioning Demo</h2>
+
+<div class="container">
+    <div class="box box1">Layer 1</div>
+    <div class="box box2">Layer 2</div>
+</div>
+
+</body>
+</html>
+<style class="css">body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(120deg, #e0f7ff, #ffe3f1);
+    padding: 40px;
+    margin: 0;
+    text-align: center;
+}
+
+.title {
+    font-size: 30px;
+    color: #003049;
+    margin-bottom: 35px;
+}
+
+.container {
+    width: 350px;
+    height: 250px;
+    margin: auto;
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+/* Common Box Styling */
+.box {
+    width: 200px;
+    height: 130px;
+    position: absolute;
+    border-radius: 15px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Bottom Layer */
+.box1 {
+    background: #0077cc;
+    top: 40px;
+    left: 40px;
+    z-index: 1;
+}
+
+/* Hover Animation */
+.box1:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 68, 255, 0.5);
+}
+
+/* Top Layer */
+.box2 {
+    background: #ff5733;
+    top: 80px;
+    left: 85px;
+    z-index: 2;
+    opacity: 0.95;
+}
+
+/* Hover Animation */
+.box2:hover {
+    transform: translateY(-10px) scale(1.08);
+    box-shadow: 0 10px 28px rgba(255, 87, 51, 0.6);
+}
+</style>

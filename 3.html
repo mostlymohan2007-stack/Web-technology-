@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Relative Positioning Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Relative Positioning Example</h2>
+
+<div class="parent">
+    <p>Parent Box</p>
+    <div class="child">Child Positioned Relative to Parent</div>
+</div>
+
+<div class="self">Positioned Relative to Itself</div>
+
+</body>
+</html>
+<style class="css">body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.parent {
+    width: 350px;
+    height: 180px;
+    background: #cce7ff;
+    border: 2px solid #3399ff;
+    position: relative;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.child {
+    width: 200px;
+    height: 50px;
+    background: #0059b3;
+    color: white;
+    position: relative;
+    top: 30px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.self {
+    width: 250px;
+    height: 60px;
+    background: #ffa630;
+    border: 2px solid #ff7b00;
+    position: relative;
+    top: 20px;
+    left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+</style>
