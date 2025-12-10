@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee XML with DTD</title>
+</head>
+<body>
+
+<h2>Employee XML File</h2>
+
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE employees SYSTEM "employees.dtd"&gt;
+&lt;employees&gt;
+    &lt;employee&gt;
+        &lt;empID&gt;E001&lt;/empID&gt;
+        &lt;name&gt;Rahul Kumar&lt;/name&gt;
+        &lt;salary&gt;45000&lt;/salary&gt;
+    &lt;/employee&gt;
+    &lt;employee&gt;
+        &lt;empID&gt;E002&lt;/empID&gt;
+        &lt;name&gt;Priya Sharma&lt;/name&gt;
+        &lt;salary&gt;52000&lt;/salary&gt;
+    &lt;/employee&gt;
+&lt;/employees&gt;
+</pre>
+
+<h2>DTD File</h2>
+
+<pre>
+&lt;!ELEMENT employees (employee+)&gt;
+&lt;!ELEMENT employee (empID, name, salary)&gt;
+&lt;!ELEMENT empID (#PCDATA)&gt;
+&lt;!ELEMENT name (#PCDATA)&gt;
+&lt;!ELEMENT salary (#PCDATA)&gt;
+</pre>
+
+</body>
+</html>

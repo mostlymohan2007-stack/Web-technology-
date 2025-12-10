@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automatic Image Slider</title>
+
+    <style>
+        #slider {
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Automatic Image Slider</h2>
+
+    <img id="slider" src="img1.jpg" alt="Slider Image">
+</div>
+
+<script>
+    let images = ["img1.jpg", "img2.jpg", "img3.jpg"];
+    let index = 0;
+
+    function changeImage() {
+        index = (index + 1) % images.length;
+        document.getElementById("slider").src = images[index];
+    }
+
+    setInterval(changeImage, 3000);
+</script>
+
+</body>
+</html>
